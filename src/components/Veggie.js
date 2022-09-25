@@ -1,4 +1,3 @@
-import React from "react";
 import { useEffect, useState } from "react";
 import styled from "styled-components"
 import { Splide, SplideSlide } from "@splidejs/react-splide"
@@ -19,21 +18,18 @@ const Veggie = () => {
         const check = localStorage.getItem("veggie");
         
         if(check){
-            // when pulling the data back, we parse the data from a string to an array
             setVeggie(JSON.parse(check));
         }else{
 
             const api = await fetch(`https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=9&tags=vegetarian`)
             const data = await api.json();
-            
-            // local storage only takes string - takes array saves as string in localstorage
             localStorage.setItem("veggie", JSON.stringify(data.recipes));
             setVeggie(data.recipes);
         }
     };
 
     return (
-        <div>
+        <List>
             <Wrapper>
                 <h3>Our Vegetarian Picks</h3>
                 <Splide options={{
@@ -56,9 +52,14 @@ const Veggie = () => {
                     })} 
                 </Splide>
             </Wrapper>  
-        </div>
+        </List>
     );
 }
+
+const List = styled.ul`
+    list-style: none;
+`
+
 const Wrapper = styled.div`
     margin: 4rem 0rem;
 

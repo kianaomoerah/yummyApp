@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import styled from "styled-components"
 import { Splide, SplideSlide } from "@splidejs/react-splide"
 import '@splidejs/splide/dist/css/splide.min.css';
-// import '@splidejs/react-splide/css';
 
 const PopularRecipes = () => {
 
@@ -19,21 +18,18 @@ const PopularRecipes = () => {
         const check = localStorage.getItem("popular");
         
         if(check){
-            // when pulling the data back, we parse the data from a string to an array
             setPopular(JSON.parse(check));
         }else{
 
             const api = await fetch(`https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=9`)
             const data = await api.json();
-            
-            // local storage only takes string - takes array saves as string in localstorage
             localStorage.setItem("popular", JSON.stringify(data.recipes));
             setPopular(data.recipes);
         }
     };
 
     return ( 
-        <div>
+        <List>
             <Wrapper>
                 <h3>Popular Picks</h3>
                 <Splide options={{
@@ -56,31 +52,13 @@ const PopularRecipes = () => {
                     })} 
                 </Splide>
             </Wrapper>  
-        </div>
+        </List>
     );
-    // return <ul>
-
-    //     <h3>Popular Picks</h3>
-
-    //     <Wrapper>
-    //         {popular.map((recipe) => {
-    //             <li key={recipe.id}>
-    //                 <Card>
-    //                     <p>{recipe.title}</p>
-    //                 </Card>
-
-    //             </li>
-    //         })
-    //         }
-    //     </Wrapper>
-
-    // </ul>
-
 }
 
-// const List = styled.ul`
-//     list-style: none;
-// `
+const List = styled.ul`
+    list-style: none;
+`
 
 const Wrapper = styled.div`
     margin: 4rem 0rem;
