@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components"
+import { Splide, SplideSlide } from "@splidejs/react-splide"
+// import '@splidejs/splide/dist/css/splide.min.css';
+import '@splidejs/react-splide/css';
 
 const PopularRecipes = () => {
 
@@ -20,30 +23,39 @@ const PopularRecipes = () => {
 
     };
 
-    return <List>
-
-        <h3>Popular Picks</h3>
+    return ( 
+        <List>
 
             <Wrapper>
+
+                <h3>Popular Picks</h3>
+
+            <Splide options={{
+                perPage:4,
+                arrows: false,
+                pagination: false,
+                drag: 'free',
+                gap: '5rem',
+            }}>
 
             {popular.map((recipe) => {
                 return (
 
-                    <li key={recipe.id}>
+                    <SplideSlide key={recipe.id}>
                         <Card>
                             <p>{recipe.title}</p>
                             <img src={recipe.image} alt={recipe.title}/>
                         </Card>
-                    {/* <li key={recipe.id}> */}
-                        {/* <p>{recipe.title}</p> */}
-                    </li>
-                // </Wrapper>
-                )
+                    </SplideSlide>
+                );
             })} 
+
+            </Splide>
 
             </Wrapper>  
     </List>
 
+    );
     // return <ul>
 
     //     <h3>Popular Picks</h3>
