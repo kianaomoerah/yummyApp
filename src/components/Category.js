@@ -29,7 +29,7 @@ const Category = () => {
 
 const List = styled.div`
     display: flex;
-    justifty-content: center;
+    justify-content: center;
     margin: 2rem 0rem;
     list-style: none;
 `;
