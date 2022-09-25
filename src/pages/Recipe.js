@@ -13,7 +13,6 @@ const Recipe = () => {
         const data = await fetch(`https://api.spoonacular.com/recipes/${params.name}/information?apiKey=${process.env.REACT_APP_API_KEY}`)
         const detailsData = await data.json();
         setDetails(detailsData);
-        console.log(detailsData);
     }
 
     useEffect(()=> {
