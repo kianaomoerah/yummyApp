@@ -16,7 +16,7 @@ const PopularRecipes = () => {
 
     const getPopular = async () => {
 
-        const check = localStorage.getItem('popular');
+        const check = localStorage.getItem("popular");
         
         if(check){
             // when pulling the data back, we parse the data from a string to an array
@@ -30,9 +30,6 @@ const PopularRecipes = () => {
             localStorage.setItem("popular", JSON.stringify(data.recipes));
             setPopular(data.recipes);
         }
-
-
-
     };
 
     return ( 
@@ -60,7 +57,6 @@ const PopularRecipes = () => {
                 </Splide>
             </Wrapper>  
         </div>
-
     );
     // return <ul>
 
