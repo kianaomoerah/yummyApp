@@ -27,7 +27,7 @@ const SearchBar = () => {
 }
 
 const FormStyle = styled.form`
-    margin: 0rem 20rem;
+    margin: 0 auto;
     width: 35rem;
 
     div {

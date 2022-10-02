@@ -33,12 +33,18 @@ const Veggie = () => {
         <List>
             <Wrapper>
                 <h3>Our Vegetarian Picks</h3>
+                <p>Click and drag to see more:</p>
                 <Splide options={{
                     perPage:3,
                     arrows: false,
                     pagination: false,
                     drag: 'free',
                     gap: '5rem',
+                    breakpoints: {
+                        620: {
+                            perPage: 2,
+                        }
+                    }
                 }}>
                     {veggie.map((recipe) => {
                         return (
@@ -61,17 +67,27 @@ const Veggie = () => {
 
 const List = styled.ul`
     list-style: none;
+
+    p {
+        margin: 10px 0px;
+        font-style: italic;
+        
+    }
 `
 
 const Wrapper = styled.div`
     margin: 4rem 0rem;
 
+    @media (max-width: 900px) {
+        width: 100vw;
+        margin: 0rem;
+    }
 `;
 
 const Card = styled.div`
-    min-height: 50vh;
-    min-width: 15vw;
-    border-radius: 2rem;
+    min-height: 350px;
+    min-width: 350px;
+    border-radius: 30px;
     overflow: hidden;
     position: relative;
 
@@ -100,6 +116,16 @@ const Card = styled.div`
         justify-content: center;
         align-items: center;
     }
+
+    @media (max-width: 1675px) {
+       min-height: 200px;
+       min-width: 200px; 
+    }
+
+    // @media (max-width: 900px) {
+    //     min-height: 100px;
+    //     min-width: 75px;
+    // }
 `;
 
 const Gradient = styled.div`
