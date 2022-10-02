@@ -76,19 +76,11 @@ const List = styled.ul`
 
     p {
         margin: 10px 0px;
-        font-style: italic;
-        
+        font-style: italic; 
     }
 `
 
 const Wrapper = styled.div`
-    // margin: 4rem 0rem;
-
-    // @media (max-width: 900px) {
-    //     width: 100vw;
-    //     margin: 0rem;
-    // }
-
     margin: 0 auto;
     max-width: 1200px;
     width: 100%;
@@ -98,7 +90,6 @@ const Wrapper = styled.div`
             font-size: 1.25rem;
         }
     }
-
 `;
 
 const Card = styled.div`
