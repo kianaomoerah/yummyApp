@@ -32,7 +32,7 @@ const FormStyle = styled.form`
     div {
         width: 100%;
         position: relative;
-        min-width: 330px;
+        min-width: 45vw;
     }
 
     input {
