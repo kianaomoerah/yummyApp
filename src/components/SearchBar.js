@@ -28,11 +28,11 @@ const SearchBar = () => {
 
 const FormStyle = styled.form`
     margin: 0 auto;
-    width: 35rem;
 
     div {
         width: 100%;
         position: relative;
+        min-width: 330px;
     }
 
     input {
@@ -45,8 +45,7 @@ const FormStyle = styled.form`
         border-radius: 1rem;
         outline: none;
         width: 100%;
-    
-        }
+    }
 
     svg {
         position: absolute;

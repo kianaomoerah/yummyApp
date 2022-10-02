@@ -36,13 +36,19 @@ const Veggie = () => {
                 <p>Click and drag to see more:</p>
                 <Splide options={{
                     perPage:3,
-                    arrows: false,
+                    arrows: true,
                     pagination: false,
                     drag: 'free',
-                    gap: '5rem',
+                    gap: '5vw',
                     breakpoints: {
-                        620: {
+
+                        1015: {
                             perPage: 2,
+                        },
+
+                        670: {
+                            gap: '15vw',
+                            perPage:1,
                         }
                     }
                 }}>
@@ -76,17 +82,28 @@ const List = styled.ul`
 `
 
 const Wrapper = styled.div`
-    margin: 4rem 0rem;
+    // margin: 4rem 0rem;
 
-    @media (max-width: 900px) {
-        width: 100vw;
-        margin: 0rem;
+    // @media (max-width: 900px) {
+    //     width: 100vw;
+    //     margin: 0rem;
+    // }
+
+    margin: 0 auto;
+    max-width: 1200px;
+    width: 100%;
+
+    h3 {
+        @media (max-width: 465px) {
+            font-size: 1.25rem;
+        }
     }
+
 `;
 
 const Card = styled.div`
-    min-height: 350px;
-    min-width: 350px;
+    min-height: 300px;
+    min-width: 300px;
     border-radius: 30px;
     overflow: hidden;
     position: relative;
@@ -118,14 +135,14 @@ const Card = styled.div`
     }
 
     @media (max-width: 1675px) {
-       min-height: 200px;
-       min-width: 200px; 
+       min-height: 250px;
+       min-width: 250px; 
     }
 
-    // @media (max-width: 900px) {
-    //     min-height: 100px;
-    //     min-width: 75px;
-    // }
+    @media (max-width: 1200px) {
+        min-height: 200px;
+        min-width: 200px;
+    }
 `;
 
 const Gradient = styled.div`
