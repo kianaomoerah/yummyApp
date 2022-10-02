@@ -58,7 +58,7 @@ const SLink = styled(NavLink) `
     }
 
     :hover {
-        transform:scale(1.1);
+        transform:scale(1.03);
     }
 
     &.active {

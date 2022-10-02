@@ -32,13 +32,31 @@ const PopularRecipes = () => {
     return ( 
         <List>
             <Wrapper>
-                <h3>Popular Picks</h3>
+                <h3>Popular Picks:</h3>
+                <p>Click or drag to see more:</p>
                 <Splide options={{
                     perPage:4,
-                    arrows: false,
+                    arrows: true,
                     pagination: false,
                     drag: 'free',
                     gap: '5rem',
+                    breakpoints: {
+
+                        1410: {
+                            perPage: 3,
+                        },
+
+                        1026: {
+                            perPage: 2,
+                            gap: '10px'
+                        },
+
+                        755: {
+                            perPage: 1,
+                            gap: '10px',
+                        }
+
+                    }
                 }}>
                     {popular.map((recipe) => {
                         return (
@@ -61,16 +79,30 @@ const PopularRecipes = () => {
 
 const List = styled.ul`
     list-style: none;
+
+    p {
+        font-style: italic;
+        margin: 10px 0px;
+    }
 `
 
 const Wrapper = styled.div`
-    margin: 4rem 0rem;
+    margin: 0 auto;
+    max-width: 1200px;
+    width: 100%;
+
+    h3 {
+        @media (max-width: 465px) {
+        font-size: 1.25rem;
+        margin: 2rem 0rem 1.5rem 0rem;
+        }
+    }
 
 `;
 
 const Card = styled.div`
-    min-height: 40vh;
-    min-width: 10vw;
+    min-height: 225px;
+    min-width: 225px;
     border-radius: 2rem;
     overflow: hidden;
     position: relative;

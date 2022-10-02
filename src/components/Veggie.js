@@ -32,8 +32,8 @@ const Veggie = () => {
     return (
         <List>
             <Wrapper>
-                <h3>Our Vegetarian Picks</h3>
-                <p>Click and drag to see more:</p>
+                <h3>Our Vegetarian Picks:</h3>
+                <p>Click or drag to see more:</p>
                 <Splide options={{
                     perPage:3,
                     arrows: true,
