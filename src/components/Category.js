@@ -57,7 +57,11 @@ const SLink = styled(NavLink) `
         font-size: 1.5rem;
     }
 
-    &.active{
+    :hover {
+        transform:scale(1.1);
+    }
+
+    &.active {
         background: linear-gradient(to right, #f27121, #e94057);
 
         svg{
