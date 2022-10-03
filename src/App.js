@@ -27,13 +27,17 @@ const Logo = styled(Link)`
 `
 
 const Nav = styled.nav`
-  padding: 4rem 0rem;
+  padding: 2rem 0rem;
   display: flex;
   justify-content: flex-start;
   align-items: center;
 
   svg {
     font-size: 2rem;
+  }
+
+  @media (max-width: 840px) {
+    justify-content: center;
   }
 `
 
