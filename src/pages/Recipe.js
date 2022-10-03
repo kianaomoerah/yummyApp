@@ -21,19 +21,19 @@ const Recipe = () => {
 
     return (
         <DetailWrapper>
-            <div>
+            <RecipeInfo>
                 <h2>{details.title}</h2>
                 <img src={details.image} alt={details.title}/>
-            </div>
+            </RecipeInfo>
             <Info>
                 <Button className={activeTab === "instructions" ? "active" : ""}onClick={()=> setActiveTab("instructions")}>Instructions</Button>
                 <Button className={activeTab === "ingredients" ? "active" : ""} onClick={()=> setActiveTab("ingredients")}>Ingredients</Button>
 
                 {activeTab === "instructions" && (
-                <div>
-                    <h4 dangerouslySetInnerHTML={{__html: details.summary}}></h4>
-                    <h4 dangerouslySetInnerHTML={{__html: details.instructions}}></h4>
-                </div>
+                <RecipeDetails>
+                    <p dangerouslySetInnerHTML={{__html: details.summary}}></p>
+                    <p dangerouslySetInnerHTML={{__html: details.instructions}}></p>
+                </RecipeDetails>
                 )}
 
                 {activeTab === "ingredients" && (
@@ -51,9 +51,10 @@ const Recipe = () => {
 }
 
 const DetailWrapper = styled.div`
-    margin-top: 10rem;
-    margin-bottom: 5rem;
+    margin: 5rem 0rem;
     display: flex;
+    width: 100%;
+
     .active {
         background: linear-gradient(35deg, #494949, #313131);
         color: white;
@@ -63,31 +64,68 @@ const DetailWrapper = styled.div`
         margin-bottom: 2rem;
     }
 
-    h4 {
-        margin-top: 25px;
-        line-height: 25px;
+    ul {
+        margin-top: 2rem;
     }
 
-    li{
-        font-size: 1.2rem;
+    @media (max-width: 1590px) {
+        flex-direction: column;
+        align-items: center;
+    }
+`
+
+const RecipeInfo = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    img {
+        margin-bottom: 20px;
+        max-width: 400px;
+    }
+`
+
+const RecipeDetails = styled.div`
+    p {
+        margin: 15px 0px;
+    }
+`
+const Button = styled.button`
+    padding: 1rem 2rem;
+    margin: 10px 4px;
+    color: #313131;
+    background: white;
+    border: 2px solid black;
+    font-weight: 600;
+
+    @media (max-width: 720px) {
+        padding: .75rem 1rem;
+    }
+
+    @media (min-width: 1590px) {
+        margin-right: 2rem;
+        margin-bottom: 4rem;
+    }
+`
+
+const Info = styled.div`
+    p {
+        // line-height: 25px;
+        line-height: 1.5rem;
+    }
+
+    li {
+        font-size: 1rem;
         line-height: 2.5rem;
     }
 
     ul{
         margin-top: 2rem;
     }
-`
-const Button = styled.button`
-    padding: 1rem 2rem;
-    color: #313131;
-    background: white;
-    border: 2px solid black;
-    margin-right: 2rem;
-    font-weight: 600;
-`
 
-const Info = styled.div`
-    margin-left: 10rem;
+    @media (min-width: 1590px) {
+        margin-left: 10rem;
+    }
 `
 
 export default Recipe; 

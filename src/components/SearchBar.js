@@ -28,9 +28,11 @@ const SearchBar = () => {
 
 const FormStyle = styled.form`
     margin: 0 auto;
+    display: flex;
+    justify-content: center;
 
     div {
-        width: 100%;
+        max-width: 600px;
         position: relative;
     }
 
@@ -47,8 +49,8 @@ const FormStyle = styled.form`
     }
 
     svg {
-        position: absolute;
-        top: 50%;
+        position: relative;
+        top: 64%;
         left: 0%;
         transform: translate(100%, -50%);
         color: white;
