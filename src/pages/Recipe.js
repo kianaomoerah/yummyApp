@@ -16,8 +16,9 @@ const Recipe = () => {
     }
 
     useEffect(()=> {
-        fetchDetails();
-    }, [params.name]);
+        fetchDetails()
+        // eslint-disable-next-line 
+    }, [params.name])
 
     return (
         <DetailWrapper>
@@ -26,8 +27,10 @@ const Recipe = () => {
                 <img src={details.image} alt={details.title}/>
             </RecipeInfo>
             <Info>
-                <Button className={activeTab === "instructions" ? "active" : ""}onClick={()=> setActiveTab("instructions")}>Instructions</Button>
-                <Button className={activeTab === "ingredients" ? "active" : ""} onClick={()=> setActiveTab("ingredients")}>Ingredients</Button>
+                <ButtonWrapper>
+                    <Button className={activeTab === "instructions" ? "active" : ""}onClick={()=> setActiveTab("instructions")}>Instructions</Button>
+                    <Button className={activeTab === "ingredients" ? "active" : ""} onClick={()=> setActiveTab("ingredients")}>Ingredients</Button>
+                </ButtonWrapper>
 
                 {activeTab === "instructions" && (
                 <RecipeDetails>
@@ -51,9 +54,13 @@ const Recipe = () => {
 }
 
 const DetailWrapper = styled.div`
-    margin: 5rem 0rem;
+    width: 90%;
+    margin: 0 auto;
+    max-width: 1200px;
     display: flex;
-    width: 100%;
+    justify-content: center;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
 
     .active {
         background: linear-gradient(35deg, #494949, #313131);
@@ -62,6 +69,7 @@ const DetailWrapper = styled.div`
 
     h2 {
         margin-bottom: 2rem;
+        text-align: center;
     }
 
     ul {
@@ -108,9 +116,17 @@ const Button = styled.button`
     }
 `
 
+const ButtonWrapper = styled.div`
+    display: flex;
+`
+
 const Info = styled.div`
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
     p {
-        // line-height: 25px;
         line-height: 1.5rem;
     }
 

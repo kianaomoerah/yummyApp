@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { useState } from 'react';
 import { FaSearch } from 'react-icons/fa';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const SearchBar = () => {
 
