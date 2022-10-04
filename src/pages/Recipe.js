@@ -10,7 +10,7 @@ const Recipe = () => {
     const [ activeTab, setActiveTab ] = useState("instructions");
 
     const fetchDetails = async () => {
-        const data = await fetch(`https://api.spoonacular.com/recipes/${params.name}/information?apiKey=${process.env.REACT_APP_API_KEY}`)
+        const data = await fetch(`https://api.spoonacular.com/recipes/${params.name}/information?apiKey=1d967d63c08640858d31755c21642d10`)
         const detailsData = await data.json();
         setDetails(detailsData);
     }

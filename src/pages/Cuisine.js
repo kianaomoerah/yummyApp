@@ -9,7 +9,7 @@ const Cuisine = () => {
     let params = useParams();
 
     const getCuisine = async (type) => {
-        const data = await fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_API_KEY}&cuisine=${type}`)
+        const data = await fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=1d967d63c08640858d31755c21642d10&cuisine=${type}`)
         const recipes = await data.json();
         setCuisine(recipes.results)
     };
