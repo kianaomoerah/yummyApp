@@ -16,6 +16,7 @@ const FooterWrapper = styled.footer`
 display: flex; 
 align-items: center;
 flex-direction: column;
+margin-top: 3rem;
 
     p {
         font-family: "Lobster Two", cursive;
